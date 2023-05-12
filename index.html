@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <title>Todo APP</title>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <div class="logo">TODO</div>
+        <div class="theme" onclick="changeTheme(event)">
+          <i class="dark-icon fa-solid fa-moon"></i>
+          <i class="sun-icon uil uil-sun"></i>
+        </div>
+      </header>
+      <div class="todo-new">
+        <span class="add-btn" onclick="addTodo()">+</span>
+        <input
+          type="text"
+          class="add-input"
+          placeholder="Create a new todo..."
+          onkeydown="addFromKey(event)"
+          spellcheck="false"
+        />
+      </div>
+      <div class="todo-body">
+        <ul class="todo-list"></ul>
+        <footer>
+          <div class="quantity-items">
+            <span class="quantity-items-number"></span>
+            <span class="quantity-items-text"></span>
+          </div>
+          <div class="todo-filter">
+            <span
+              id="all"
+              class="todo-filter-item active"
+              onclick="filterItems(event,'all')"
+              >All</span
+            >
+            <span
+              id="active"
+              class="todo-filter-item"
+              onclick="filterItems(event,false)"
+              >Active</span
+            >
+            <span
+              id="completed"
+              class="todo-filter-item"
+              onclick="filterItems(event,true)"
+              >Completed</span
+            >
+          </div>
+          <div class="clear-todo" onclick="clearList()">Clear Completed</div>
+        </footer>
+      </div>
+      <div class="notice">
+        <p>Drag and drop to reorder list.</p>
+        <p class="notice-l">
+          Double click an item to edit content, press 'Enter' to save change
+        </p>
+        <p class="notice-m">Double click an item to edit content</p>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
